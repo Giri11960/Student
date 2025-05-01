@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Database System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Student Database System</h2>
+
+  <div class="section">
+    <h3>Add Student</h3>
+    <label>Total Working Days: <input type="number" id="totalDays" value="1" /></label><br>
+    <label>Name: <input type="text" id="name" /></label><br>
+    <label>Roll No: <input type="number" id="rno" /></label><br>
+    <label>Fees Status (P/N):
+      <select id="fees">
+        <option value="P">Paid (P)</option>
+        <option value="N">Not Paid (N)</option>
+      </select>
+    </label><br>
+    <label>Days Present: <input type="number" id="daysPresent" /></label><br>
+    <button onclick="addStudent()">Add Student</button>
+  </div>
+
+  <div class="section">
+    <h3>Student List</h3>
+    <button onclick="printStudents()">Show All</button>
+    <button onclick="showEligible()">Show Eligible Students</button>
+    <button onclick="undoDelete()">Undo Delete</button>
+    <div id="studentTable"></div>
+  </div>
+
+  <div class="section">
+    <h3>Eligibility Criteria</h3>
+    <label>Min Attendance %: <input type="number" id="minAttend" value="75" /></label><br>
+    <label>Required Fee Status (P/N/B for both):
+      <select id="feeCriteria">
+        <option value="P">Paid (P)</option>
+        <option value="N">Not Paid (N)</option>
+        <option value="B">Both (B)</option>
+      </select>
+    </label><br>
+    <button onclick="updateCriteria()">Update Criteria</button>
+    <button onclick="resetCriteria()">Reset</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
